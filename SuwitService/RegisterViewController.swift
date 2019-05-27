@@ -52,7 +52,7 @@ class RegisterViewController: UIViewController {
         
         
       name = nameTextfield.text
-        print("name = \(name)")
+//        print("name = \(name)")
         
        if let testName = name {
             print("testName = \(testName)")
@@ -74,14 +74,37 @@ class RegisterViewController: UIViewController {
 //        Check Space
         if (nameString.count == 0) {
             print("Name is space")
+            myAlert(message: "กรุณากรอกชื่อด้วยครับ")
         }   else if (userString.count == 0) {
             print("User is space")
+            myAlert(message: "กรุณากรอก User ด้วยน๊ะจ๊ะ")
         } else if (passwordString.count == 0) {
             print("password is space")
+            myAlert(message: "Please Fill Password in Blank")
+        } else if (passwordString.count <= 5){
+            myAlert(message: "Password more 6 Charactor")
         }
+        
+        // Upload To mysql Server
         
     } // uploadButton
     
+    func myAlert(message: String) -> Void {
+        
+        let objAlertDialog = UIAlertController(title: "มี Error เกิดขึ้น", message: message, preferredStyle: UIAlertController.Style.alert)
+        
+//        Create Button
+        
+        objAlertDialog.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+            objAlertDialog.dismiss(animated: true, completion: nil)
+        }))
+        
+        present(objAlertDialog, animated: true, completion: nil)
+        
+        
+        
+        
+    }
     
  
 
