@@ -102,6 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-87" y="23"/>
         </scene>
         <!--Register-->
         <scene sceneID="6ic-o4-wKa">
@@ -110,10 +111,75 @@
                     <view key="view" contentMode="scaleToFill" id="EFf-fr-2BJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ix-hF-MS4">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.2606298225" green="0.66322504159999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Register" id="OBF-pF-VOX">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="ArrowBack" id="FrA-Ky-P3T">
+                                            <connections>
+                                                <action selector="backButton:" destination="85q-oV-oRY" id="aKP-hd-yBV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="CloudUpload" id="3n1-dE-9fg">
+                                            <connections>
+                                                <action selector="uploadButton:" destination="85q-oV-oRY" id="shW-O9-BjL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bNp-qj-vLu">
+                                <rect key="frame" x="87.666666666666686" y="170" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="79U-jg-AlJ"/>
+                                    <constraint firstAttribute="width" constant="200" id="ZuQ-75-Fkx"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GWH-I0-z6A">
+                                <rect key="frame" x="87.666666666666686" y="218" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8Zp-Wq-x8d"/>
+                                    <constraint firstAttribute="width" constant="200" id="N6J-MO-7EW"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gui-6c-REV">
+                                <rect key="frame" x="87.666666666666686" y="264" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aoX-aZ-dcV"/>
+                                    <constraint firstAttribute="width" constant="200" id="f1w-iI-bY5"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gui-6c-REV" firstAttribute="centerX" secondItem="EFf-fr-2BJ" secondAttribute="centerX" id="6kc-Jm-Ygq"/>
+                            <constraint firstItem="GWH-I0-z6A" firstAttribute="top" secondItem="bNp-qj-vLu" secondAttribute="bottom" constant="18" id="Ig3-qg-WQi"/>
+                            <constraint firstItem="bNp-qj-vLu" firstAttribute="top" secondItem="5ix-hF-MS4" secondAttribute="bottom" constant="82" id="PVp-Kn-SoI"/>
+                            <constraint firstItem="Gui-6c-REV" firstAttribute="top" secondItem="GWH-I0-z6A" secondAttribute="bottom" constant="16" id="VAb-5u-WMq"/>
+                            <constraint firstItem="bNp-qj-vLu" firstAttribute="centerX" secondItem="EFf-fr-2BJ" secondAttribute="centerX" id="jNg-NT-022"/>
+                            <constraint firstItem="5ix-hF-MS4" firstAttribute="trailing" secondItem="igt-ym-x0I" secondAttribute="trailing" id="lAv-lV-lXs"/>
+                            <constraint firstItem="5ix-hF-MS4" firstAttribute="leading" secondItem="igt-ym-x0I" secondAttribute="leading" id="suj-v8-Iec"/>
+                            <constraint firstItem="GWH-I0-z6A" firstAttribute="centerX" secondItem="EFf-fr-2BJ" secondAttribute="centerX" id="swD-uM-8eQ"/>
+                            <constraint firstItem="5ix-hF-MS4" firstAttribute="top" secondItem="igt-ym-x0I" secondAttribute="top" id="uWu-Ec-hIa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="igt-ym-x0I"/>
                     </view>
                     <connections>
+                        <outlet property="nameTextfield" destination="bNp-qj-vLu" id="rvr-Gt-8mo"/>
+                        <outlet property="passwordTextfield" destination="Gui-6c-REV" id="124-C8-OKN"/>
+                        <outlet property="userTextfield" destination="GWH-I0-z6A" id="lpc-JA-Qed"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="BackAuthen" id="twv-Ad-Ey5"/>
                     </connections>
                 </viewController>
@@ -123,6 +189,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ArrowBack" width="36" height="36"/>
+        <image name="CloudUpload" width="36" height="36"/>
         <image name="Logo" width="149.33332824707031" height="170.66667175292969"/>
     </resources>
 </document>
