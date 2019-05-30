@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BBD5C53229F8BFB00A51407 /* MyServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD5C52229F8BFB00A51407 /* MyServiceViewController.swift */; };
 		3BD4AE4E229B8E9D0071672E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4AE4D229B8E9D0071672E /* AppDelegate.swift */; };
 		3BD4AE50229B8E9D0071672E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4AE4F229B8E9D0071672E /* ViewController.swift */; };
 		3BD4AE53229B8E9D0071672E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD4AE51229B8E9D0071672E /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BBD5C52229F8BFB00A51407 /* MyServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyServiceViewController.swift; sourceTree = "<group>"; };
 		3BD4AE4A229B8E9D0071672E /* SuwitService.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuwitService.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD4AE4D229B8E9D0071672E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BD4AE4F229B8E9D0071672E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				3BD4AE4D229B8E9D0071672E /* AppDelegate.swift */,
 				3BD4AE4F229B8E9D0071672E /* ViewController.swift */,
 				3BD4AE51229B8E9D0071672E /* Main.storyboard */,
+				3BBD5C52229F8BFB00A51407 /* MyServiceViewController.swift */,
 				3BD4AE5F229BA2EB0071672E /* RegisterViewController.swift */,
 				3BD4AE54229B8E9E0071672E /* Assets.xcassets */,
 				3BD4AE56229B8E9E0071672E /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				3BD4AE60229BA2EB0071672E /* RegisterViewController.swift in Sources */,
 				3BD4AE50229B8E9D0071672E /* ViewController.swift in Sources */,
+				3BBD5C53229F8BFB00A51407 /* MyServiceViewController.swift in Sources */,
 				3BD4AE4E229B8E9D0071672E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

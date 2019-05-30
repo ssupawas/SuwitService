@@ -10,6 +10,57 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--MyService-->
+        <scene sceneID="QrR-eY-KbR">
+            <objects>
+                <viewController title="MyService" id="3oO-Zv-rLt" customClass="MyServiceViewController" customModule="SuwitService" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3bg-FH-EHz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odd-3d-wFz">
+                                <rect key="frame" x="87.666666666666686" y="281" width="200" height="150"/>
+                                <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="TkF-qh-105"/>
+                                    <constraint firstAttribute="height" constant="150" id="ULe-go-Ki9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="55"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playButton:" destination="3oO-Zv-rLt" eventType="touchUpInside" id="OWT-hq-478"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tX-WQ-DhJ">
+                                <rect key="frame" x="87.666666666666686" y="452" width="200" height="80"/>
+                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ZFR-hj-vhP"/>
+                                    <constraint firstAttribute="width" constant="200" id="pjB-nz-sd2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="55"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButton:" destination="3oO-Zv-rLt" eventType="touchUpInside" id="lOS-Ow-UzE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7tX-WQ-DhJ" firstAttribute="top" secondItem="odd-3d-wFz" secondAttribute="bottom" constant="21" id="Y2P-kD-W8n"/>
+                            <constraint firstItem="odd-3d-wFz" firstAttribute="centerY" secondItem="3bg-FH-EHz" secondAttribute="centerY" constant="-50" id="kRx-Wv-ZOG"/>
+                            <constraint firstItem="7tX-WQ-DhJ" firstAttribute="centerX" secondItem="3bg-FH-EHz" secondAttribute="centerX" id="pCp-dT-Ikt"/>
+                            <constraint firstItem="odd-3d-wFz" firstAttribute="centerX" secondItem="3bg-FH-EHz" secondAttribute="centerX" id="uzq-Xi-NAA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2y8-2S-QId"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="skT-8l-AzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-975" y="23"/>
+        </scene>
         <!--Authen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -63,6 +114,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7oH-9J-1Zv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNG-cz-nPX">
                                 <rect key="frame" x="192" y="411" width="95" height="30"/>
@@ -97,7 +151,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTextField" destination="xbz-QQ-al3" id="zJY-x8-k5C"/>
+                        <outlet property="userTextField" destination="WYL-PP-VJG" id="NgJ-ce-YAA"/>
                         <segue destination="85q-oV-oRY" kind="show" identifier="GoRegister" id="Cb1-6P-UUd"/>
+                        <segue destination="3oO-Zv-rLt" kind="show" identifier="GoMyService" id="NQm-g2-j6i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -193,4 +250,7 @@
         <image name="CloudUpload" width="36" height="36"/>
         <image name="Logo" width="149.33332824707031" height="170.66667175292969"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Cb1-6P-UUd"/>
+    </inferredMetricsTieBreakers>
 </document>
