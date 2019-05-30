@@ -250,7 +250,4 @@
         <image name="CloudUpload" width="36" height="36"/>
         <image name="Logo" width="149.33332824707031" height="170.66667175292969"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Cb1-6P-UUd"/>
-    </inferredMetricsTieBreakers>
 </document>

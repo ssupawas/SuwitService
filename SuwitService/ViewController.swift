@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             myAlert(title: "มีช่องว่างนะจ๊ะ !!!", message: "กรุณากรอกให้ครบนะจ๊ะ") // ต้อง call methon หรือ function alert ที่เราสร้าง
         } else {
             
-            
+           checkAuthen(user: user, password: password)
             
         }
         
@@ -44,6 +44,70 @@ class ViewController: UIViewController {
     
     
     func checkAuthen(user: String, password: String) -> Void {
+        
+        let urlString: String = "https://www.androidthai.in.th/wit/getUserWhereUserSuwit.php?isAdd=true&User=\(user)"
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url){ data, response, error in
+            
+            
+            guard let testData = data,error == nil else {
+                return
+                
+            }
+            
+            do {
+                
+//                Read JSON #1
+                let jsonResponse = try JSONSerialization.jsonObject(with: testData, options: [])
+                print("jsonResponse ==> \(jsonResponse)")
+                
+                
+                
+                
+                
+//                Chanhe JSON to Array
+                guard let jsonArray = jsonResponse as? [[String: Any]] else{
+                    return
+                }
+                print("jsonArray ==> \(jsonArray)")
+                
+//                Array to Dictionary
+                let jsonDictionary: Dictionary = jsonArray[0]
+                print("jsonDic ==> \(jsonDictionary)")
+                
+//                Check Password
+                
+                let truePassword: String = jsonDictionary["Password"] as! String
+                
+                if password == truePassword {
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "GoMyService", sender: nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.myAlert(title: "Password False", message: "Please Try Agains Password False")
+                    }
+                }
+                
+                
+                
+            } catch let myError{
+                
+                print(myError)
+                
+//                User False
+                DispatchQueue.main.async {
+                    self.myAlert(title: "User False", message: "No This User in my Database")
+                }
+            }
+            
+            
+        } // End Task
+        task.resume()
         
         
         
