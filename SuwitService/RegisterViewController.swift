@@ -86,8 +86,59 @@ class RegisterViewController: UIViewController {
         }
         
         // Upload To mysql Server
+        uplodeToServer(name: nameString, user: userString, password: passwordString)
+        
         
     } // uploadButton
+    
+    
+    func uplodeToServer(name: String, user: String, password: String) -> Void {
+        
+        let urlString: String = "https://www.androidthai.in.th/wit/addUserSuwit.php?isAdd=true&Name=\(name)&User=\(user)&Password=\(password)"
+        
+        
+        let objURL = URL(string: urlString) // แป้นบาส หรือ  API
+        let request = NSMutableURLRequest(url: objURL!) // ความพยายามที่อยากให้ทำ
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+            
+            if error != nil {
+                print("Have Error")
+                
+            } else {
+//                Task ทำงานสำเร็จ
+                if let testData = data {
+                    
+                    let canReadable = NSString(data: testData, encoding: String.Encoding.utf8.rawValue)
+                    print("canReadable ==> \(canReadable)")
+                    
+                    if let testCanReadable = canReadable {
+                      
+                        if testCanReadable == "true" {
+                            
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: "BackAuthen", sender: self)
+                            }
+                            
+                        } //if4
+                        
+                    } //if3
+                    
+                    
+                } // if2
+                
+            } // if1
+            
+        } // End Task
+        task.resume()
+        
+        
+        
+        
+        
+        
+    } // UploadToServer
+    
+    
     
     func myAlert(message: String) -> Void {
         
