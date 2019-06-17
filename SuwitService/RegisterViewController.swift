@@ -85,7 +85,7 @@ class RegisterViewController: UIViewController {
             myAlert(message: "Password more 6 Charactor")
         }
         
-        // Upload To mysql Server
+        // Upload To mysql Server   เป็นการ call
         uplodeToServer(name: nameString, user: userString, password: passwordString)
         
         
@@ -94,29 +94,31 @@ class RegisterViewController: UIViewController {
     
     func uplodeToServer(name: String, user: String, password: String) -> Void {
         
-        let urlString: String = "https://www.androidthai.in.th/wit/addUserSuwit.php?isAdd=true&Name=\(name)&User=\(user)&Password=\(password)"
+        let urlString: String = "https://ttbthailand.org/xcode/addUserSuwit.php?isAdd=true&Name=\(name)&User=\(user)&Password=\(password)"
         
+
         
-        let objURL = URL(string: urlString) // แป้นบาส หรือ  API
-        let request = NSMutableURLRequest(url: objURL!) // ความพยายามที่อยากให้ทำ
-        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+        let objURL = URL(string: urlString) // แป้นบาส หรือ  API  ต้องสร้างเป็น object
+        let request = NSMutableURLRequest(url: objURL!) // ความพยายามที่อยากให้ทำ ฉันต้องการทำอะไรบางอย่างไปที่แป้นบาส
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in  // task คือสิ่งที่อยากให้ทำ
             
-            if error != nil {
+            if error != nil {                // ถ้าชู๊ตบาสแล้วชู๊ตไม่ลง จะมีการ error โดยการแสดงข้อความ
                 print("Have Error")
                 
             } else {
-//                Task ทำงานสำเร็จ
+//                ถ้า Task ทำงานสำเร็จ
                 if let testData = data {
                     
                     let canReadable = NSString(data: testData, encoding: String.Encoding.utf8.rawValue)
-                    print("canReadable ==> \(canReadable)")
+                    print("canReadable ==> \(String(describing: canReadable))")
                     
                     if let testCanReadable = canReadable {
                       
-                        if testCanReadable == "true" {
+                        if testCanReadable == "true" {     // ถ้าชู๊ตผ่าน หรือใส่ข้อมูลเข้า database ผ่านก็ให้กลับไปหน้าแรกโดยอัตโนมัติ
                             
-                            DispatchQueue.main.async {
+                            DispatchQueue.main.async {      // คำสั่งในการกลับไปยังหน้าที่เราต้องการอัตโนมัติ
                                 self.performSegue(withIdentifier: "BackAuthen", sender: self)
+                                print("ใส่ข้อมูลสำเร็จ")
                             }
                             
                         } //if4

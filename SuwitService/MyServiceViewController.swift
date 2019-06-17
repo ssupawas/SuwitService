@@ -11,19 +11,32 @@ import AVFoundation // เป็น  class libraly ภายนอกเข้�
 
 class MyServiceViewController: UIViewController {
     
-    var myPlayer: AVPlayer?  // ประกาศตัวแปรที่ใช้ class นี้เท่านั้น global
+    var Player: AVPlayer?  // ประกาศตัวแปรที่ใช้ class นี้เท่านั้น global
+    
+    
     
 
+    @IBOutlet weak var testOutlet: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     } // Main Method
     
+    
+    @IBAction func testButton(_ sender: UIButton) {
+        
+        testOutlet.frame = CGRect(x: 19, y: 200, width: 200, height: 200)
+    }
+    
+    
+    
 
     @IBAction func stopButton(_ sender: UIButton) {
         
-        myPlayer?.pause()
+        Player?.pause()
         
     }
     
@@ -36,12 +49,12 @@ class MyServiceViewController: UIViewController {
         
         
         let playerItem: AVPlayerItem = AVPlayerItem(url: url!)
-        myPlayer = AVPlayer(playerItem: playerItem)
-        let playerLayer: AVPlayerLayer = AVPlayerLayer(player: myPlayer)
+        Player = AVPlayer(playerItem: playerItem)
+        let playerLayer: AVPlayerLayer = AVPlayerLayer(player: Player)
         
         playerLayer.frame = CGRect(x: 0, y: 0, width: 10, height: 50)
         self.view.layer.addSublayer(playerLayer)
-        myPlayer!.play() // ได้ปุ่มเปิดแล้วครับ
+        Player!.play() // ได้ปุ่มเปิดแล้วครับ
         
 
         
